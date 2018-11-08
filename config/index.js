@@ -57,8 +57,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    /*跨域代理 用于在开发环境进行测试联调*/
     proxyTable: {
-      
+      /*
+      '/test': {
+        target: 'http://news-at.zhihu.com/api/4/news',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/test': '/latest'
+        }
+      */
     },
 
     // Various Dev Server settings
