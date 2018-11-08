@@ -1,12 +1,36 @@
 <template>
-  <div id="app">
-      <h1>index</h1>
+  <div>
+    <x-header>海马生产协同平台</x-header>
+    <box gap="10px 10px">
+      <P>Click Me</P>
+      <x-button>submit</x-button>
+      <x-button type="primary" @click.native="processButton001">primary</x-button>
+      <x-button type="warn">Delete</x-button>
+    </box>
   </div>
 </template>
 
 <script>
+import { XHeader, XButton, Box, Flexbox, FlexboxItem, } from 'vux'
+
 export default {
-  name: 'app'
+   components: {
+    XHeader,
+    XButton,
+    Box,
+    Flexbox,
+    FlexboxItem,
+   },
+  name: 'app',
+  data () {
+    return {
+    }
+  },
+  methods: {
+    processButton001 () {
+        console.log("click +1!")
+    }
+  }
 }
 </script>
 
