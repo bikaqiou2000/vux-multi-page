@@ -1,13 +1,13 @@
 <template>
   <div style="height:100%;">
     <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="55px">
-      <x-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">
-        二工厂-业务消息
+      <x-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;" >
+        二工厂-异常警告
       </x-header>
       <div>
-        <button-tab  style="padding:12px;" >
-          <button-tab-item selected>未读消息</button-tab-item>
-          <button-tab-item>已读消息</button-tab-item>
+        <button-tab style="padding:12px" >
+          <button-tab-item selected>待处理</button-tab-item>
+          <button-tab-item>已处理</button-tab-item>
         </button-tab>
 
         <group>
@@ -28,7 +28,7 @@
               <flexbox-item><p class="msg-field-content">{{msgitem.date}}</p></flexbox-item>
             </flexbox>
             <flexbox>
-              <flexbox-item :span="2"><p class="msg-field-head">已读</p></flexbox-item>
+              <flexbox-item :span="2"><p class="msg-field-head">已处理</p></flexbox-item>
               <flexbox-item><check-icon :value.sync="msgitem.isread"></check-icon></flexbox-item>
             </flexbox>
           </div>
@@ -37,6 +37,7 @@
         <panel header="消息列表" :list="list" type="4" ></panel>
         -->
       </div>
+      <div slot="bottom"></div>
     </view-box>
   </div>
 </template>
@@ -61,52 +62,18 @@ export default {
       demo2: 'TODAY',
       list: [{
         id:1,
-        title: '694803离队',
-        desc: '车型E5 配置CBD 点位PC1 离队原因：缺件物料1。',
+        title: 'RFID设备报警',
+        desc: '点位PC1 原因：数据校验不符,异常通过。',
         date: '2018-10-01 23:20:00',
         isread:true,
       }, {
         id:2,
-        title: '694803归队队',
-        desc: '车型E5 配置CBD 点位PC1 离队原因：缺件物料1。',
+        title: '打印机设备报警',
+        desc: '点位PC1 原因：设备不响应。',
         date: '2018-10-01 23:20:00',
         isread:false,
       },
-      {
-        id:3,
-        title: '694803离队',
-        desc: '车型E5 配置CBD 点位PC1 离队原因：缺件物料1。',
-        date: '2018-10-01 23:20:00',
-        isread:false,
-      },
-      {
-        id:4,
-        title: '694803离队',
-        desc: '车型E5 配置CBD 点位PC1 离队原因：缺件物料1。',
-        date: '2018-10-01 23:20:00',
-        isread:false,
-      },
-      {
-        id:5,
-        title: '694803离队',
-        desc: '车型E5 配置CBD 点位PC1 离队原因：缺件物料1。',
-        date: '2018-10-01 23:20:00',
-        isread:false,
-      },
-      {
-        id:6,
-        title: '694803离队',
-        desc: '车型E5 配置CBD 点位PC1 离队原因：缺件物料1。',
-        date: '2018-10-01 23:20:00',
-        isread:false,
-      },
-      {
-        id:7,
-        title: '694803离队',
-        desc: '车型E5 配置CBD 点位PC1 离队原因：缺件物料1。',
-        date: '2018-10-01 23:20:00',
-        isread:false,
-      },
+     
       ],
     }
   },
@@ -145,7 +112,7 @@ group-title{
   padding: 5px;
   font-weight:800;
   font-size: +1.2em;
-  color: rgb(128, 127, 127);
+  color: rgb(90, 0, 0);
 }
 .msg-field-head{
   padding: 2px;
