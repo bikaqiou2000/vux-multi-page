@@ -1,10 +1,10 @@
 <template>
   <div style="height:100%;" >
     <view-box ref="viewBox" body-padding-top="46px" body-padding-bottom="55px" >
-    <x-header left-options.showBack="false" style="width:100%;position:absolute;left:0;top:0;z-index:100;" >
+    <x-header :left-options="{showBack:false}" style="width:100%;position:absolute;left:0;top:0;z-index:100;" >
       海马MES-主页
     </x-header>
-    <div style="padding: 15px;">
+    <div style="padding: 12px;">
       <button-tab >
         <button-tab-item selected>二工厂</button-tab-item>
         <button-tab-item>三工厂</button-tab-item>
