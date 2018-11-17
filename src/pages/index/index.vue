@@ -1,25 +1,62 @@
 <template>
   <div>
-    <x-header>海马生产协同平台</x-header>
-    <box gap="10px 10px">
-      <P>Click Me</P>
-      <x-button>submit</x-button>
-      <x-button type="primary" @click.native="processButton001">primary</x-button>
-      <x-button type="warn">Delete</x-button>
-    </box>
+    <x-header :left-options="{showBack: false}">海马生产协同-主页</x-header>
+    <div style="padding: 15px;">
+      <button-tab v-model="demo01">
+        <button-tab-item selected>二工厂</button-tab-item>
+        <button-tab-item>三工厂</button-tab-item>
+      </button-tab>
+      <br/>
+
+      <group-title>消息通知</group-title>
+      <grid  :cols="2"  :show-lr-borders="true" :show-vertical-dividers="false">
+        <grid-item :label="最新通知">
+          <img slot="icon" src="../../assets/msg.png">
+          <span slot="label">
+            最新通知
+            <badge text="8"></badge>
+          </span>
+        </grid-item>
+        <grid-item :label="最新警告">
+          <img slot="icon" src="../../assets/msgsystem.png">
+          <span slot="label">
+            最新警告
+            <badge text="1"></badge>
+          </span>
+        </grid-item>
+      </grid>
+      <br/>
+      <group-title>管理数据</group-title>
+      <grid :cols="2" :show-lr-borders="true" :show-vertical-dividers="false">
+        <grid-item :label="我的消息">
+          <img slot="icon" src="../../assets/data06.png">
+          <span slot="label">实时产量</span>
+        </grid-item>
+        <grid-item :label="车辆信息">
+          <img slot="icon" src="../../assets/database.png">
+          <span slot="label">车辆信息</span>
+        </grid-item>
+        <grid-item :label="过点信息">
+          <img slot="icon" src="../../assets/database.png">
+          <span slot="label">过点信息</span>
+        </grid-item>
+      </grid>
+    </div>
   </div>
 </template>
 
 <script>
-import { XHeader, XButton, Box, Flexbox, FlexboxItem, } from 'vux'
+import { 
+  XHeader, XButton, Box, Flexbox, FlexboxItem, 
+  Grid, GridItem, ButtonTab, ButtonTabItem,Badge,
+} from 'vux'
+
 
 export default {
    components: {
-    XHeader,
-    XButton,
-    Box,
-    Flexbox,
-    FlexboxItem,
+    XHeader,XButton,Box,Flexbox,
+    FlexboxItem,Grid,GridItem,
+    ButtonTab, ButtonTabItem,Badge
    },
   name: 'app',
   data () {
@@ -34,9 +71,22 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" >
 @import '~vux/src/styles/reset.less';
+@import '~vux/src/styles/1px.less';
 body {
   background-color: #fbf9fe;
+}
+group-title{
+  color: gray;
+}
+.weui-grids {
+  background-color: #fff;
+}
+.badge-value {
+  display: inline-block!important;
+}
+.vertical-middle {
+  vertical-align: middle;
 }
 </style>

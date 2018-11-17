@@ -3,7 +3,25 @@
 import Vue from 'vue'
 import FastClick from 'fastclick'
 import App from './chart1'
-import * as echarts from 'echarts'
+//import * as echarts  from 'echarts'  //方式1
+
+//import * as echarts  from '../../../node_modules/echarts/echarts.common' //方式2
+import * as echarts from 'echarts/echarts.common' //方式2
+
+//方式3
+// import echarts from 'echarts/lib/echarts'
+// import 'echarts/lib/chart/bar'
+// import 'echarts/lib/component/tooltip'
+// import 'echarts/lib/component/title'
+
+//方式4
+// // 引入 ECharts 主模块
+// var echarts = require('echarts/lib/echarts');
+// // 引入柱状图
+// require('echarts/lib/chart/bar');
+// // 引入提示框和标题组件
+// require('echarts/lib/component/tooltip');
+// require('echarts/lib/component/title');
 
 FastClick.attach(document.body)
 
