@@ -15,14 +15,14 @@
         <grid-item :lable="'最新通知'">
           <img slot="icon" src="../../assets/msg.png">
           <span slot="label">
-            最新通知
+            业务消息
             <badge text="8"></badge>
           </span>
         </grid-item>
         <grid-item >
           <img slot="icon" src="../../assets/msgsystem.png">
           <span slot="label">
-            最新警告
+            警告消息
             <badge text="1"></badge>
           </span>
         </grid-item>

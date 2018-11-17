@@ -12,6 +12,7 @@
 
         <group>
           <calendar v-model="demo2" title="查看日期" disable-future></calendar>
+          <popup-radio title="选择车间" :options="options1" v-model="option1"></popup-radio>
         </group>
 
         <card style="padding:12px" v-for="msgitem in list" :key="msgitem.id">
@@ -46,7 +47,7 @@
 import { 
   XHeader, XButton, Box, Flexbox, FlexboxItem, 
   Grid, GridItem, ButtonTab, ButtonTabItem,Badge,Calendar,
-  Panel, Group, ViewBox, Card, CheckIcon
+  Panel, Group, ViewBox, Card, CheckIcon, PopupRadio
 } from 'vux'
 
 
@@ -54,12 +55,14 @@ export default {
    components: {
     XHeader, XButton, Box, Flexbox, FlexboxItem, 
     Grid, GridItem, ButtonTab, ButtonTabItem,Badge,Calendar,
-    Panel,Group, ViewBox, Card, CheckIcon 
+    Panel,Group, ViewBox, Card, CheckIcon, PopupRadio
    },
   name: 'app',
   data () {
     return {
       demo2: 'TODAY',
+      option1: '全部',
+      options1: ['全部', '总装', '涂装','焊装'],
       list: [{
         id:1,
         title: 'RFID设备报警',
