@@ -60,6 +60,7 @@ export default {
     XHeader,XButton,Box,Flexbox,FlexboxItem,
     Grid,GridItem,ButtonTab,ButtonTabItem,
     Badge, ViewBox, Group, GroupTitle, 
+    //'dd' : () => {}
   },
   name: "app",
   data() {
@@ -76,7 +77,10 @@ export default {
 <style lang="less" >
 @import "~vux/src/styles/reset.less";
 @import "~vux/src/styles/1px.less";
-body {
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
   background-color: #fbf9fe;
 }
 group-title {
